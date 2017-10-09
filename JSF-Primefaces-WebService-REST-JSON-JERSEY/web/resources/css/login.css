@@ -1,0 +1,56 @@
+/*******************************************************************************
+ Login css file
+*******************************************************************************/
+/* 
+    Created on : 22/09/2017, 09:47:40
+    Author     : Maicon Messias
+*/
+/* Main grid */
+.principal {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+/* Title of the main grid */
+.principal .ui-panelgrid-header .ui-widget-header td {
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main grid background */
+.principal tbody .ui-widget-content {
+    background-color: #e2e2e2;
+}
+
+/* Main grid labels */
+.principal tbody .ui-widget-content .ui-panelgrid-cell tbody 
+.ui-widget-content .ui-panelgrid-cell label {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main grid input text */
+.principal tbody .ui-widget-content .ui-panelgrid-cell tbody 
+.ui-widget-content .ui-panelgrid-cell input {
+    width: 300px;
+    font-size: 14px;
+    color: #333333;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main grid button */
+.principal tbody .ui-widget-content .ui-panelgrid-cell tbody 
+.ui-widget-content .ui-panelgrid-cell button {
+    width: 400px;
+    font-size: 14px;
+    background-color: #83c4f9;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Message dialog */
+.ui-growl.ui-widget {
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}

@@ -1,0 +1,60 @@
+<ui:composition template="/WEB-INF/template/templatemain.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="titulo">#{language['pesquisafuncionario_titulo']}</ui:define>
+    <ui:define name="cabecalho">
+        <h:outputStylesheet name="templatemain.css" library="css" />
+        <h:outputStylesheet name="pesquisafuncionario.css" library="css" />
+    </ui:define>
+    <ui:define name="corpo">
+        <h:form>
+            <p:growl id="growlInfo" showDetail="true" life="5000"/>
+            <p:dataTable var="funcionario" value="#{funciBean.lista}" id="dtTFunci"
+                         resizableColumns="true" scrollable="true" scrollHeight="150"
+                         styleClass="dtTable"
+                         selectionMode="single" 
+                         selection="#{funciBean.selecionado}" 
+                         rowKey="#{funcionario.id}">
+                <f:facet name="header">
+                    <h:outputLabel value="#{language['pesquisafuncionario_titulo']}"/>
+                </f:facet>
+                <p:column headerText="#{language['pesquisafuncionario_label.datatable.nome']}">
+                    <h:outputText value="#{funcionario.nome}" />
+                </p:column>
+                <p:column headerText="#{language['pesquisafuncionario_label.datatable.rg']}">
+                    <h:outputText value="#{funcionario.rg}" />
+                </p:column>
+                <p:column headerText="#{language['pesquisafuncionario_label.datatable.cpf']}">
+                    <h:outputText value="#{funcionario.cpf}" />
+                </p:column>
+                <f:facet name="footer">
+                    <p:commandButton icon="ui-icon-pencil" 
+                                     value="#{language['pesquisafuncionario_button.datatable.editar']}"
+                                     action="#{funciBean.edita()}" />
+
+                    <p:commandButton icon="ui-icon-plusthick"
+                                     value="#{language['pesquisafuncionario_button.datatable.incluir']}"
+                                     action="#{funciBean.insere()}" />
+
+                    <p:commandButton icon="ui-icon-refresh"
+                                     value="#{language['pesquisafuncionario_button.datatable.atualizar']}"
+                                     action="#{funciBean.atualiza()}" 
+                                     update="dtTFunci" />
+
+                    <p:commandButton value="#{language['pesquisafuncionario_button.datatable.excluir']}"
+                                     action="#{funciBean.deleta()}"
+                                     update="@form"
+                                     icon="ui-icon-trash">
+                        <p:confirm header="#{language['dialog_confirm.confirmacao']}" 
+                                   message="#{language['pesquisafuncionario_button.datatable.msg_exclusao']}" 
+                                   icon="ui-icon-alert" />
+                    </p:commandButton>
+                </f:facet>
+            </p:dataTable>
+        </h:form>
+        <!-- Dialog de exclusao de registro -->
+        <ui:include src="/WEB-INF/util/confirmdlg.xhtml" />
+    </ui:define>
+</ui:composition>

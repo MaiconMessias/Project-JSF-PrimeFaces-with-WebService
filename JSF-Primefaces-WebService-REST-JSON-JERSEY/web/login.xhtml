@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>#{language['login.title']}</title>
+        <h:outputStylesheet name="login.css" library="css" />
+    </h:head>
+    <h:body>
+        <f:view locale="#{facesContext.externalContext.request.locale}" />
+        <f:loadBundle basename="com/owl/util/language" var="language" />
+        <h:form>
+            <p:focus context="@form"/>
+            <p:growl id="growl" showDetail="true" life="5000"/>
+            <p:panelGrid columns="1" styleClass="principal">
+                <f:facet name="header">
+                    #{language['login_facet_header']}
+                </f:facet>
+                <p:panelGrid columns="2">
+                    <p:outputLabel for="usuario" value="#{language['login_label.usuario']}" />
+                    <p:inputText alt="#{language['login_inputText.usuario_alt']}" 
+                                 id="usuario"
+                                 placeholder="#{language['login_inputText.usuario_placeholder']}"
+                                 value="#{usuarioBean.usuario}" />
+                    <p:outputLabel for="senha" value="#{language['login_label.senha']}" />
+                    <p:password alt="#{language['login_inputText.senha_alt']}" id="senha"
+                                placeholder="#{language['login_inputText.senha_placeholder']}" 
+                                value="#{usuarioBean.senha}" />
+                </p:panelGrid>
+                <p:panelGrid columns="1">
+                    <p:commandButton value="#{language['login_button.enviar']}" 
+                                     action="#{usuarioBean.validaUsuario()}" 
+                                     update="@form" />
+                </p:panelGrid>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>

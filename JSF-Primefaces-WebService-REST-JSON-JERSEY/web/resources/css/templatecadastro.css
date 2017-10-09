@@ -1,0 +1,31 @@
+/*******************************************************************************
+ Template Register css file
+*******************************************************************************/
+/* 
+    Created on : 23/09/2017, 19:51:05
+    Author     : Maicon Messias
+*/
+
+/* Main grid */
+.principal {
+    position: absolute;
+    top: 50px;
+    left: 40%;
+}
+
+/* Title of the main grid */
+.principal .ui-panelgrid-header .ui-widget-header td {
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main grid background */
+.principal tbody .ui-widget-content {
+    background-color: #e2e2e2;
+}
+
+/* Message dialog */
+.ui-growl.ui-widget {
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}

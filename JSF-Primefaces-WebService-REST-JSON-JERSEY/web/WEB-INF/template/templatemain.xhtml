@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>
+            <ui:insert name="titulo">Template Main</ui:insert>
+        </title>
+        <h:outputStylesheet name="templatemain.css" library="css" />
+        <ui:insert name="cabecalho"></ui:insert>
+    </h:head>
+    <h:body>
+        <f:view locale="#{facesContext.externalContext.request.locale}" />
+        <f:loadBundle basename="com/owl/util/language" var="language" />
+        <h:form id="formHeader">
+            <p:growl id="growl" showDetail="true" life="5000"/>
+            <header>
+                <p:menubar>
+                    <p:menuitem value="#{language['templatemain_menubar.menuitem_principal']}" 
+                                outcome="index" styleClass="bolditem" icon="ui-icon-home"/>
+                    <p:submenu label="#{language['templatemain_menubar.menuitem_pesquisa']}"
+                               icon="ui-icon-search">
+                        <p:menuitem value="#{language['templatemain_menubar.menuitem_funcionario']}" 
+                                    outcome="pesquisafuncionario" icon="ui-icon-person"/>
+                    </p:submenu>
+                </p:menubar>
+            </header>
+        </h:form>
+        <section>
+            <ui:insert name="corpo">
+                Corpo da página
+            </ui:insert>
+        </section>
+        <footer>
+            Footer
+        </footer>
+    </h:body>
+</html>
+

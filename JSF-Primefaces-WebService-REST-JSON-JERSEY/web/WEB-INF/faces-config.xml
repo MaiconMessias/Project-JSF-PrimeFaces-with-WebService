@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.1"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+    <navigation-rule>
+        <!--De qualquer pagina-->
+        <from-view-id>/*</from-view-id>
+        
+        <!--Eh possivel navegar PARA qualquer pagina-->
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>pesquisafuncionario</from-outcome>
+            <to-view-id>/pesquisa/pesquisafuncionario.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>cadastrofuncionario</from-outcome>
+            <to-view-id>/cadastro/cadastrofuncionario.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>pesquisacargo</from-outcome>
+            <to-view-id>/pesquisa/pesquisacargo.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>cadastrocargo</from-outcome>
+            <to-view-id>/cadastro/cadastrocargo.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

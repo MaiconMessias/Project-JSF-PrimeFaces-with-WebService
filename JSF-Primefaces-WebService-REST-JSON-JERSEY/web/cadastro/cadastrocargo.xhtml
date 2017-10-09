@@ -1,0 +1,37 @@
+<ui:composition template="/WEB-INF/template/templatecadastro.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="titulo">#{language['cadastrocargo_titulo']}</ui:define>
+    
+    <ui:define name="cabecalho">
+        <h:outputStylesheet name="templatecadastro.css" library="css" />
+        <h:outputStylesheet name="cadastrocargo.css" library="css" />
+    </ui:define>
+    
+    <ui:define name="facet_header">
+        #{language['cadastrocargo_titulo']}
+    </ui:define>
+    <ui:define name="corpo">
+        <p:remoteCommand name="handleAutomaticLogout" actionListener="#{cargoBean.onBeforeUnload()}" async="false" />
+        <p:panelGrid columns="2">
+            <p:outputLabel value="#{language['cadastrocargo_label.id']}" />
+            <p:inputText value="#{cargoBean.selecionado.id}" disabled="true" 
+                         styleClass="iptId" />
+            <p:outputLabel value="#{language['cadastrocargo_label.descricao']}" />
+            <p:inputText value="#{cargoBean.selecionado.descricao}" 
+                         styleClass="iptDescricao" />
+            <p:outputLabel value="#{language['cadastrocargo_label.salario']}" />
+            <p:inputText value="#{cargoBean.selecionado.salario}" 
+                         styleClass="iptSalario" />
+        </p:panelGrid>
+        <p:panelGrid columns="2">
+            <p:commandButton value="#{language['cadastrocargo_button.salvar']}"
+                             icon="ui-icon-disk"
+                             action="#{cargoBean.salva()}" />
+            <p:commandButton value="#{language['cadastrocargo_button.cancelar']}"
+                             icon="ui-icon-closethick"
+                             action="#{cargoBean.cancela()}" />
+        </p:panelGrid>
+    </ui:define>
+</ui:composition>

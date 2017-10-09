@@ -1,0 +1,71 @@
+/*******************************************************************************
+ Office Search css file
+*******************************************************************************/
+/* 
+    Created on : 24/09/2017, 20:40:23
+    Author     : Maicon Messias
+*/
+/* DataTable */
+.ui-datatable {
+    margin-top: 10px;
+}
+
+/* DataTale Header */
+.ui-datatable .ui-datatable-header {
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* DataTable head column */
+.ui-datatable thead th {
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* DataTable lines */
+.ui-datatable tbody tr {
+    font-size: 12px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* DataTable button */
+.ui-datatable .ui-datatable-footer button {
+    font-size: 14px;
+    background-color: #83c4f9;
+    margin-left: 13px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 200px;
+}
+
+                /*** Confirm Dialog ***/
+/* Title */
+.ui-confirm-dialog .ui-dialog-titlebar {
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+/* Content */
+.ui-confirm-dialog .ui-dialog-content {
+    font-size: 12px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.ui-confirm-dialog.ui-widget-content {
+    background-color: #e2e2e2;
+}
+
+/* Button panel*/ 
+.ui-confirm-dialog .ui-dialog-buttonpane {
+    background-color: #e2e2e2;
+}
+
+.ui-confirm-dialog .ui-dialog-buttonpane .ui-widget-content {
+    background-color: #e2e2e2;
+}
+
+/* Button */
+.ui-confirm-dialog .ui-dialog-buttonpane .ui-button {
+    font-size: 14px;
+    background-color: #83c4f9;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+/******/

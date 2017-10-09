@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title><ui:insert name="titulo">Template Cadastro</ui:insert></title>
+        <ui:insert name="cabecalho" >
+            <h:outputStylesheet name="templatemain.css" library="css" />
+        </ui:insert>
+    </h:head>
+    <h:body>
+        <f:view locale="#{facesContext.externalContext.request.locale}" />
+        <f:loadBundle basename="com/owl/util/language" var="language" />
+        <h:form>
+            <p:growl id="growl" showDetail="true" life="5000"/>
+            <p:panelGrid columns="1" styleClass="principal">
+                <f:facet name="header">
+                    <ui:insert name="facet_header" />
+                </f:facet>
+
+                <ui:insert name="corpo">
+                    <!--Corpo da pagina-->
+                </ui:insert>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

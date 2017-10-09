@@ -1,0 +1,14 @@
+<ui:composition template="/WEB-INF/template/templatemain.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="titulo">#{language['index_titulo']}</ui:define>
+    <ui:define name="cabecalho">
+        <h:outputStylesheet name="templatemain.css" library="css" />        
+        <h:outputStylesheet name="index.css" library="css" />        
+    </ui:define>
+    <ui:define name="corpo">
+        <h:graphicImage library="imagens" name="windows-10.jpg"/>
+    </ui:define>
+</ui:composition>
+
+

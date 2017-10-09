@@ -1,0 +1,52 @@
+<ui:composition template="/WEB-INF/template/templatecadastro.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="titulo">#{language['cadastrofuncionario_titulo']}</ui:define>
+    
+    <ui:define name="cabecalho">
+        <h:outputStylesheet name="templatecadastro.css" library="css" />
+        <h:outputStylesheet name="cadastrofuncionario.css" library="css" />
+    </ui:define>
+    
+    <ui:define name="facet_header">
+        #{language['cadastrofuncionario_titulo']}
+    </ui:define>
+    <ui:define name="corpo">
+        <p:panelGrid columns="2">
+            <p:outputLabel value="#{language['cadastrofuncionario_label.id']}" />
+            <p:inputText value="#{funciBean.selecionado.id}" disabled="true" 
+                         styleClass="iptId" />
+            <p:outputLabel value="#{language['cadastrofuncionario_label.nome']}" />
+            <p:inputText value="#{funciBean.selecionado.nome}" 
+                         styleClass="iptNome" />
+            <p:outputLabel value="#{language['cadastrofuncionario_label.rg']}" />
+            <p:inputMask value="#{funciBean.selecionado.rg}" 
+                         mask="99.999.999-9"
+                         styleClass="iptRg" />
+            <p:outputLabel value="#{language['cadastrofuncionario_label.cpf']}" />
+            <p:inputMask value="#{funciBean.selecionado.cpf}"
+                         mask="999.999.999-99"
+                         styleClass="iptCpf" />
+            <p:outputLabel for="cargoFunci" value="#{language['cadastrofuncionario_label.cargo']}" />
+            <p:selectOneMenu id="cargoFunci"
+                             value="#{funciBean.cargoSelecionado.id}"
+                             panelStyleClass="itens">
+                <f:selectItem itemLabel="#{language['cadastrofuncionario_onemenu.selecione']}" 
+                              noSelectionOption="true" />
+                <f:selectItems value="#{cargoBean.lista}" var="cargo" 
+                               itemLabel="#{cargo.descricao}" 
+                               itemValue="#{cargo.id}" />
+            </p:selectOneMenu>
+        </p:panelGrid>
+        <p:panelGrid columns="2">
+            <p:commandButton value="#{language['cadastrofuncionario_button.salvar']}"
+                             icon="ui-icon-disk"
+                             action="#{funciBean.salva()}" />
+            <p:commandButton value="#{language['cadastrofuncionario_button.cancelar']}"
+                             icon="ui-icon-closethick"
+                             action="#{funciBean.cancela()}" />
+        </p:panelGrid>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,57 @@
+<ui:composition template="/WEB-INF/template/templatemain.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="titulo">#{language['pesquisacargo_titulo']}</ui:define>
+    <ui:define name="cabecalho">
+        <h:outputStylesheet name="templatemain.css" library="css" />
+        <h:outputStylesheet name="pesquisacargo.css" library="css" />
+    </ui:define>
+    <ui:define name="corpo">
+        <h:form>
+            <p:remoteCommand name="handleAutomaticLogout" actionListener="#{cargoBean.onBeforeUnload()}" async="false" />
+            <p:dataTable var="cargo" value="#{cargoBean.lista}" id="dtTCargo"
+                         resizableColumns="true" scrollable="true" scrollHeight="150"
+                         styleClass="dtTable"
+                         selectionMode="single" 
+                         selection="#{cargoBean.selecionado}" 
+                         rowKey="#{cargo.id}">
+                <f:facet name="header">
+                    <h:outputLabel value="#{language['pesquisacargo_titulo']}"/>
+                </f:facet>
+                <p:column headerText="#{language['pesquisacargo_label.datatable.descricao']}">
+                    <h:outputText value="#{cargo.descricao}" />
+                </p:column>
+                <p:column headerText="#{language['pesquisacargo_label.datatable.salario']}">
+                    <h:outputText value="#{cargo.salario}" />
+                </p:column>
+                <f:facet name="footer">
+                    <p:commandButton icon="ui-icon-pencil" 
+                                     value="#{language['pesquisacargo_button.datatable.editar']}"
+                                     action="#{cargoBean.edita()}" />
+
+                    <p:commandButton icon="ui-icon-plusthick"
+                                     value="#{language['pesquisacargo_button.datatable.incluir']}"
+                                     action="#{cargoBean.insere()}" />
+
+                    <p:commandButton icon="ui-icon-refresh"
+                                     value="#{language['pesquisacargo_button.datatable.atualizar']}"
+                                     action="#{cargoBean.atualiza()}" 
+                                     update="dtTCargo" />
+
+                    <p:commandButton value="#{language['pesquisacargo_button.datatable.excluir']}"
+                                     action="#{cargoBean.deleta()}"
+                                     update="dtTCargo"
+                                     icon="ui-icon-trash">
+                        <p:confirm header="#{language['dialog_confirm.confirmacao']}" 
+                                   message="#{language['pesquisacargo_button.datatable.msg_exclusao']}" 
+                                   icon="ui-icon-alert" />
+                    </p:commandButton>
+                </f:facet>
+            </p:dataTable>
+        </h:form>
+        <!-- Dialog de exclusao de registro -->
+        <ui:include src="/WEB-INF/util/confirmdlg.xhtml" />
+    </ui:define>
+</ui:composition>

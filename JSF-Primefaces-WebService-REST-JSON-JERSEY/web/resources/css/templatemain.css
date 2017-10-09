@@ -1,0 +1,54 @@
+/*******************************************************************************
+ Template Main css file
+*******************************************************************************/
+/* 
+    Created on : 21/09/2017, 20:13:34
+    Author     : Maicon Messias
+*/
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Message dialog */
+.ui-growl.ui-widget {
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+header {
+    position: relative;
+    margin: 0 auto;
+    /*border: 2px solid;*/
+    width: 940px;
+}
+
+/* Menubar */
+header .ui-menu {
+    background-color: #e2e2e2;
+}
+
+/* MenuItem */
+header .ui-menu .ui-menu-list .ui-menuitem {
+    font-size: 14px;
+    margin-left: 8px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* MenuItem Main Page*/
+header .ui-menu .ui-menu-list .bolditem {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+section {
+    position: relative;
+    margin: 0 auto;
+    width: 940px;
+}
+
+footer {
+    position: relative;
+    margin: 0 auto;
+    width: 940px;
+}

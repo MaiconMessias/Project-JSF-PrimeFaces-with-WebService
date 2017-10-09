@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+  <context-root>/JSF-Primefaces-WebService-REST-JSON-JERSEY</context-root>
+</jboss-web>

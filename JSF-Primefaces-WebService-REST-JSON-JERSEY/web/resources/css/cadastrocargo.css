@@ -1,0 +1,42 @@
+/*******************************************************************************
+ Office Registration css file
+*******************************************************************************/
+/* 
+    Created on : 24/09/2017, 21:07:30
+    Author     : Maicon Messias
+*/
+/* Label */
+.principal tbody tbody .ui-widget-content label {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Input */
+.principal tbody tbody .ui-widget-content input {
+    font-size: 14px;
+    color: #333333;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.principal tbody tbody .ui-widget-content .iptId {
+    width: 40px;
+}
+
+.principal tbody tbody .ui-widget-content .iptDescricao {
+    width: 250px;
+}
+
+.principal tbody tbody .ui-widget-content .iptSalario {
+    width: 100px;
+}
+
+/* Button */
+.principal tbody tbody .ui-widget-content button {
+    font-size: 14px;
+    background-color: #83c4f9;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 150px;
+    margin-left: 10px;
+}
+/******/
